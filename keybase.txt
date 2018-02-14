@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/musse
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://musse.cc
+  * I am musse (https://keybase.io/musse) on keybase.
+  * I have a public key ASA4DwzP6nStHUWEakwuQrPgMyGL3wAuMKUDhwJkN2kC5Qo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120d45f7be93fad9946b8bc160c98e8e5d1efd35074054a86409bf5f5dc038f82920a",
+      "host": "keybase.io",
+      "kid": "0120380f0ccfea74ad1d45846a4c2e42b3e033218bdf002e30a503870264376902e50a",
+      "uid": "7221f705dc3cf5d486d4105bde30ce19",
+      "username": "musse"
+    },
+    "merkle_root": {
+      "ctime": 1517154665,
+      "hash": "59002499e1d6c4e79b6b09c72042b868321d8f67e35ad4260b5b0b99c31b6929de7881ceabe68e5db330d58b91300695c37f34f06a15ddd68855b18f5592380c",
+      "hash_meta": "9bf63d8e9f94f5f273660f029944056c35ceab2ff3451df6380054feb5b8f2b1",
+      "seqno": 1995404
+    },
+    "service": {
+      "hostname": "musse.cc",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.40"
+  },
+  "ctime": 1517154674,
+  "expire_in": 504576000,
+  "prev": "e22ec64446f4bc0f774132a82e3e3c9c478e1d6a66ef30541a22cf3fce3d0731",
+  "seqno": 20,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgOA8Mz+p0rR1FhGpMLkKz4DMhi98ALjClA4cCZDdpAuUKp3BheWxvYWTFAz17ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwZDQ1ZjdiZTkzZmFkOTk0NmI4YmMxNjBjOThlOGU1ZDFlZmQzNTA3NDA1NGE4NjQwOWJmNWY1ZGMwMzhmODI5MjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMzgwZjBjY2ZlYTc0YWQxZDQ1ODQ2YTRjMmU0MmIzZTAzMzIxOGJkZjAwMmUzMGE1MDM4NzAyNjQzNzY5MDJlNTBhIiwidWlkIjoiNzIyMWY3MDVkYzNjZjVkNDg2ZDQxMDViZGUzMGNlMTkiLCJ1c2VybmFtZSI6Im11c3NlIn0sIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNTE3MTU0NjY1LCJoYXNoIjoiNTkwMDI0OTllMWQ2YzRlNzliNmIwOWM3MjA0MmI4NjgzMjFkOGY2N2UzNWFkNDI2MGI1YjBiOTljMzFiNjkyOWRlNzg4MWNlYWJlNjhlNWRiMzMwZDU4YjkxMzAwNjk1YzM3ZjM0ZjA2YTE1ZGRkNjg4NTViMThmNTU5MjM4MGMiLCJoYXNoX21ldGEiOiI5YmY2M2Q4ZTlmOTRmNWYyNzM2NjBmMDI5OTQ0MDU2YzM1Y2VhYjJmZjM0NTFkZjYzODAwNTRmZWI1YjhmMmIxIiwic2Vxbm8iOjE5OTU0MDR9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoibXVzc2UuY2MiLCJwcm90b2NvbCI6Imh0dHA6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjQwIn0sImN0aW1lIjoxNTE3MTU0Njc0LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwicHJldiI6ImUyMmVjNjQ0NDZmNGJjMGY3NzQxMzJhODJlM2UzYzljNDc4ZTFkNmE2NmVmMzA1NDFhMjJjZjNmY2UzZDA3MzEiLCJzZXFubyI6MjAsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAct0eyknz7dfqHf1EmYNoT1sb7d2WHu6Rqs1ZMiKip82ZRaqnhED+UGHhK8DxYYuc3TIaNMBg/e0M3rbLd4/iCKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIIc55ZDB/vCbDJ6zf5RPQSNp8a2gHbRztqmOV4gxV3LBo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/musse
+
+==================================================================
