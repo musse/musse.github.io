@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	</head>
+	<body style="background-color:grey">
+		<p>Que palavra em alemão você gostaria de procurar?</p>
+		<input id="boxu" autofocus="" data-com.bitwarden.browser.user-edited="yes" type="text">
+		<script>
+			document.getElementById("boxu").onkeydown = function(e) {searchy(e)};
+			function searchy(e) {
+				if (e.which == 13) {
+					var q = encodeURIComponent(document.getElementById("boxu").value);
+					if (document.getElementById("google").checked) {
+						window.open("http://www.google.de/search?q=" + q + "&num=12&hl=de&tbo=d&site=imghp&tbm=isch&sout=1&biw=1075&bih=696");
+					}
+					if (document.getElementById("wiki").checked) {
+						window.open("http://de.wiktionary.org/wiki/" + q);
+					}
+					if (document.getElementById("forvo").checked) {
+						window.open("http://www.forvo.com/word/" + q + "/#de");
+					}
+					if (document.getElementById("leo").checked) {
+						window.open("https://dict.leo.org/alem%C3%A3o-portugu%C3%AAs/" + q);
+					}
+					if (document.getElementById("duden").checked) {
+						window.open("https://www.duden.de/suchen/dudenonline/" + q);
+					}
+					document.getElementById("boxu").value = "";
+				}
+			}
+		</script>
+		<p><input type="checkbox" id="google" checked>Google Images</p>
+		<p><input type="checkbox" id="wiki" checked>Wiktionary</p>
+		<p><input type="checkbox" id="forvo" checked>Forvo</p>
+		<p><input type="checkbox" id="leo" checked>Leo (pt ↔ de)</p>
+		<p><input type="checkbox" id="duden" checked>Duden</p>
+		<p>Baseado no <a href="https://fluent-forever.com/multi-search/">multi-search do Fluent Forever</a></p>
+	</body>
+</html>
