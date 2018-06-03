@@ -1,41 +1,85 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Multi-busca em alemão</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	</head>
-	<body style="background-color:grey">
-		<p>Que palavra em alemão você gostaria de procurar?</p>
-		<input id="boxu" autofocus="" data-com.bitwarden.browser.user-edited="yes" type="text">
-		<script>
-			document.getElementById("boxu").onkeydown = function(e) {searchy(e)};
-			function searchy(e) {
-				if (e.which == 13) {
-					var q = encodeURIComponent(document.getElementById("boxu").value);
-					if (document.getElementById("google").checked) {
-						window.open("http://www.google.de/search?q=" + q + "&num=12&hl=de&tbo=d&site=imghp&tbm=isch&sout=1&biw=1075&bih=696");
-					}
-					if (document.getElementById("wiki").checked) {
-						window.open("http://de.wiktionary.org/wiki/" + q);
-					}
-					if (document.getElementById("forvo").checked) {
-						window.open("http://www.forvo.com/word/" + q + "/#de");
-					}
-					if (document.getElementById("leo").checked) {
-						window.open("https://dict.leo.org/alem%C3%A3o-portugu%C3%AAs/" + q);
-					}
-					if (document.getElementById("duden").checked) {
-						window.open("https://www.duden.de/suchen/dudenonline/" + q);
-					}
-					document.getElementById("boxu").value = "";
-				}
-			}
-		</script>
-		<p><input type="checkbox" id="google" checked>Google Images</p>
-		<p><input type="checkbox" id="wiki" checked>Wiktionary</p>
-		<p><input type="checkbox" id="forvo" checked>Forvo</p>
-		<p><input type="checkbox" id="leo" checked>Leo (pt ↔ de)</p>
-		<p><input type="checkbox" id="duden" checked>Duden</p>
-		<p>Baseado no <a href="https://fluent-forever.com/multi-search/">multi-search do Fluent Forever</a></p>
-	</body>
+    <head>
+        <title>Multi-busca em alemão</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
+    </head>
+    <body>
+        <div class="ui padded grid">
+            <div class="column">
+                <h1 class="ui huge header">Que palavra em alemão você gostaria de procurar?</h1>
+                <div class="ui form">
+                    <div class="inline field">
+                        <div class="ui icon input">
+                            <i class="search icon"></i>
+                            <input placeholder="Procurar..." id="boxu" autofocus="" type="text">
+                        </div>
+                    </div>
+                    <div class="grouped fields">
+                        <div class=" field">
+                            <div class="ui toggle checkbox">
+                                <input tabindex="0" class="hidden" id="google" checked="checked" type="checkbox">
+                                <label>Google Images</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui toggle checkbox">
+                                <input tabindex="0" class="hidden" id="wiki" checked="checked" type="checkbox">
+                                <label>Wiktionary</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui toggle checkbox">
+                                <input tabindex="0" class="hidden" id="forvo" checked="checked" type="checkbox">
+                                <label>Forvo</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui toggle checkbox">
+                                <input tabindex="0" class="hidden" id="leo" checked="checked" type="checkbox">
+                                <label>Leo</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui toggle checkbox">
+                                <input tabindex="0" class="hidden" id="duden" checked="checked" type="checkbox">
+                                <label>Duden</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>Baseado no <a href="https://fluent-forever.com/multi-search/">multi-search do Fluent Forever</a></p>
+            </div>
+        </div>
+        <script>
+            $('.ui.checkbox')
+                .checkbox()
+                ;
+            document.getElementById("boxu").onkeydown = function(e) {searchy(e)};
+            function searchy(e) {
+                if (e.which == 13) {
+                    var q = encodeURIComponent(document.getElementById("boxu").value);
+                    if (document.getElementById("google").checked) {
+                        window.open("http://www.google.de/search?q=" + q + "&num=12&hl=de&tbo=d&site=imghp&tbm=isch&sout=1&biw=1075&bih=696");
+                    }
+                    if (document.getElementById("wiki").checked) {
+                        window.open("http://de.wiktionary.org/wiki/" + q);
+                    }
+                    if (document.getElementById("forvo").checked) {
+                        window.open("http://www.forvo.com/word/" + q + "/#de");
+                    }
+                    if (document.getElementById("leo").checked) {
+                        window.open("https://dict.leo.org/alem%C3%A3o-portugu%C3%AAs/" + q);
+                    }
+                    if (document.getElementById("duden").checked) {
+                        window.open("https://www.duden.de/suchen/dudenonline/" + q);
+                    }
+                    document.getElementById("boxu").value = "";
+                }
+            }
+        </script>
+    </body>
 </html>
