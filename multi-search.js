@@ -52,6 +52,9 @@ var vm = new Vue({
 
 function parseSearches() {
     searches = JSON.parse(localStorage.getItem('searchedWords'))
+    if (!searches) {
+        return searches
+    }
     for(var i = 0; i < searches.length; i++) {
         searches[i].time = moment(searches[i].time);
     }
