@@ -7,80 +7,69 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
     </head>
     <body>
-        <div class="ui padded grid">
-            <div class="column">
+        <div class="ui padded relaxed page centerd grid">
+            <div class="ui center aligned centerd column" id="multi-search">
                 <h1 class="ui huge header">Que palavra em alemão você gostaria de procurar?</h1>
                 <div class="ui form">
                     <div class="inline field">
                         <div class="ui icon input">
                             <i class="search icon"></i>
-                            <input placeholder="Procurar..." id="boxu" autofocus="" type="text">
+                            <input @keyup.enter="searchWord" v-model="wordToSearch" placeholder="Procurar..." type="text">
                         </div>
                     </div>
                     <div class="grouped fields">
-                        <div class=" field">
-                            <div class="ui toggle checkbox">
-                                <input tabindex="0" class="hidden" id="google" checked="checked" type="checkbox">
-                                <label>Google Images</label>
+                        <label>Em que sites?</label>
+                        <div class="field">
+                            <div class="ui checkbox">
+                                <input v-model="searchEngines" id="google" value="google" tabindex="0" class="hidden" type="checkbox">
+                                <label>Google Imagens</label>
                             </div>
                         </div>
                         <div class="field">
-                            <div class="ui toggle checkbox">
-                                <input tabindex="0" class="hidden" id="wiki" checked="checked" type="checkbox">
+                            <div class="ui checkbox">
+                                <input v-model="searchEngines" id="wiki" value="wiki" tabindex="0" class="hidden" type="checkbox">
                                 <label>Wiktionary</label>
                             </div>
                         </div>
                         <div class="field">
-                            <div class="ui toggle checkbox">
-                                <input tabindex="0" class="hidden" id="forvo" checked="checked" type="checkbox">
+                            <div class="ui checkbox">
+                                <input v-model="searchEngines" id="forvo" value="forvo" tabindex="0" class="hidden" type="checkbox">
                                 <label>Forvo</label>
                             </div>
                         </div>
                         <div class="field">
-                            <div class="ui toggle checkbox">
-                                <input tabindex="0" class="hidden" id="leo" checked="checked" type="checkbox">
+                            <div class="ui checkbox">
+                                <input v-model="searchEngines" id="leo" value="leo" tabindex="0" class="hidden" type="checkbox">
                                 <label>Leo</label>
                             </div>
                         </div>
                         <div class="field">
-                            <div class="ui toggle checkbox">
-                                <input tabindex="0" class="hidden" id="duden" checked="checked" type="checkbox">
+                            <div class="ui checkbox">
+                                <input v-model="searchEngines" id="duden" value="duden" tabindex="0" class="hidden" type="checkbox">
                                 <label>Duden</label>
                             </div>
                         </div>
                     </div>
                 </div>
+                <h2 class="ui horizontal divider header">Palavras procuradas</h2>
+                <p v-if="searchedWords.length == 0">Nenhuma pesquisa realizada.</p>
+                <div v-else>
+                    <a href='#' v-on:click="resetSearchList">Limpar lista</a>
+                    <div class="ui list">
+                        <div v-for="s in searchedWords" class="item">
+                            <div class="header">{{ s.word }}</div>
+                            {{ s.time.fromNow() }}
+                        </div>
+                    </div>
+                </div>
+                <div class="ui divider"></div>
                 <p>Baseado no <a href="https://fluent-forever.com/multi-search/">multi-search do Fluent Forever</a></p>
             </div>
         </div>
-        <script>
-            $('.ui.checkbox')
-                .checkbox()
-                ;
-            document.getElementById("boxu").onkeydown = function(e) {searchy(e)};
-            function searchy(e) {
-                if (e.which == 13) {
-                    var q = encodeURIComponent(document.getElementById("boxu").value);
-                    if (document.getElementById("google").checked) {
-                        window.open("http://www.google.de/search?q=" + q + "&num=12&hl=de&tbo=d&site=imghp&tbm=isch&sout=1&biw=1075&bih=696");
-                    }
-                    if (document.getElementById("wiki").checked) {
-                        window.open("http://de.wiktionary.org/wiki/" + q);
-                    }
-                    if (document.getElementById("forvo").checked) {
-                        window.open("http://www.forvo.com/word/" + q + "/#de");
-                    }
-                    if (document.getElementById("leo").checked) {
-                        window.open("https://dict.leo.org/alem%C3%A3o-portugu%C3%AAs/" + q);
-                    }
-                    if (document.getElementById("duden").checked) {
-                        window.open("https://www.duden.de/suchen/dudenonline/" + q);
-                    }
-                    document.getElementById("boxu").value = "";
-                }
-            }
-        </script>
+        <script src="multi-search.js"></script>
     </body>
 </html>
