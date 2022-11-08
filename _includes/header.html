@@ -11,7 +11,7 @@
         {% else %}
           {% assign url = link.url | relative_url %}
         {% endif %}
-        <a class="page-link" href="{{ url }}">{{ link.title }}</a>
+        <a {% if link.title contains "Mastodon" %} rel="me" {% endif %} class="page-link" href="{{ url }}">{{ link.title }}</a>
       {% endfor %}
     </nav>
 
